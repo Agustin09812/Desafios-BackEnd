@@ -102,7 +102,7 @@ class ProductManager {
     console.log("Producto actualizado:", this.products[index])
   }
 
-  // Si se comenta esta parte del código, el producto se guarda en el archivo "productos.json"
+  // Si se comenta esta parte del código, el producto se guarda en el archivo "productos.json", y no se elimina
   deleteProduct(id) {
     // Buscamos el índice del producto que coincide con el id proporcionado
     const index = this.products.findIndex(product => product.id === id)
@@ -125,6 +125,8 @@ const productManager = new ProductManager('productos.json')
 
 console.log("Todos los productos:", productManager.getProducts())
 
+// Agregar más productos para testear funcionamiento del json
+
 productManager.addProduct({
   title: "producto prueba",
   description: "Este es un producto prueba",
@@ -133,6 +135,26 @@ productManager.addProduct({
   code: "abc123",
   stock: 25
 })
+
+productManager.addProduct({
+  title: "producto de prueba 2",
+  description: "Este es un producto prueba",
+  price: 200,
+  thumbnail: "Sin imagen",
+  code: "abc1234",
+  stock: 25
+})
+
+productManager.addProduct({
+  title: "producto de prueba 3",
+  description: "Este es un producto prueba",
+  price: 200,
+  thumbnail: "Sin imagen",
+  code: "abc12345",
+  stock: 25
+})
+
+// -----------------------------------------------------------------
 
 console.log("Todos los productos:", productManager.getProducts())
 
